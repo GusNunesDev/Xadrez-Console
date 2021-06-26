@@ -1,0 +1,16 @@
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\bin\Debug\net5.0\xadrez-console.exe
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\bin\Debug\net5.0\xadrez-console.deps.json
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\bin\Debug\net5.0\xadrez-console.runtimeconfig.json
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\bin\Debug\net5.0\xadrez-console.runtimeconfig.dev.json
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\bin\Debug\net5.0\xadrez-console.dll
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\bin\Debug\net5.0\ref\xadrez-console.dll
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\bin\Debug\net5.0\xadrez-console.pdb
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\obj\Debug\net5.0\xadrez-console.csprojAssemblyReference.cache
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\obj\Debug\net5.0\xadrez-console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\obj\Debug\net5.0\xadrez-console.AssemblyInfoInputs.cache
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\obj\Debug\net5.0\xadrez-console.AssemblyInfo.cs
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\obj\Debug\net5.0\xadrez-console.csproj.CoreCompileInputs.cache
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\obj\Debug\net5.0\xadrez-console.dll
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\obj\Debug\net5.0\ref\xadrez-console.dll
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\obj\Debug\net5.0\xadrez-console.pdb
+C:\Users\Gustavo\source\repos\xadrez-console\xadrez-console\obj\Debug\net5.0\xadrez-console.genruntimeconfig.cache
