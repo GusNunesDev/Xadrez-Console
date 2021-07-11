@@ -54,13 +54,13 @@ namespace xadrez
         {
             Peca PecaCapturada = ExecutaMovimento(origem, destino);
 
-            if (estaEmXeque(JogadorAtual))
+            if (EstaEmXeque(JogadorAtual))
             {
                 DesfazMovimento(origem, destino, PecaCapturada);
                 throw new TabuleiroException("Você não pode se colocar em xeque!");
             }
 
-            if (estaEmXeque(adversaria(JogadorAtual)))
+            if (EstaEmXeque(Adversaria(JogadorAtual)))
             {
                 Xeque = true;
             }
@@ -69,8 +69,15 @@ namespace xadrez
                 Xeque = false;
             }
 
-            Turno++;
-            MudaJogador();
+            if (TesteXequemate(Adversaria(JogadorAtual)))
+            {
+                Terminada = true;
+            }
+            else
+            {
+                Turno++;
+                MudaJogador();
+            }            
         }
 
         public void ValidarPosicaoDeOrigem(Posicao pos)
@@ -136,7 +143,7 @@ namespace xadrez
             return aux;
         }
 
-        private Cor adversaria(Cor cor)
+        private Cor Adversaria(Cor cor)
         {
             if (cor == Cor.Branca)
             {
@@ -148,7 +155,7 @@ namespace xadrez
             }
         }
 
-        private Peca rei (Cor cor)
+        private Peca Rei (Cor cor)
         {
             foreach (Peca x in pecasEmJogo(cor))
             {
@@ -160,14 +167,14 @@ namespace xadrez
             return null;
         }
 
-        public bool estaEmXeque(Cor cor)
+        public bool EstaEmXeque(Cor cor)
         {
-            Peca R = rei(cor);
+            Peca R = Rei(cor);
             if (R == null)
             {
                 throw new TabuleiroException("Não tem rei da cor " + cor + " no tabuleiro!");
             }
-            foreach (Peca x in pecasEmJogo(adversaria(cor)))
+            foreach (Peca x in pecasEmJogo(Adversaria(cor)))
             {
                 bool[,] mat = x.MovimentosPossiveis();
                 if (mat[R.posicao.Linha, R.posicao.Coluna])
@@ -176,6 +183,37 @@ namespace xadrez
                 }
             }
             return false;
+        }
+
+        public bool TesteXequemate(Cor cor)
+        {
+            if (!EstaEmXeque(cor))
+            {
+                return false;
+            }
+            foreach (Peca x in pecasEmJogo(cor))
+            {
+                bool[,] mat = x.MovimentosPossiveis();
+                for (int i = 0; i < Tab.Linhas; i++)
+                {
+                    for (int j = 0; j < Tab.Colunas; j++)
+                    {
+                        if (mat[i, j])
+                        {
+                            Posicao origem = x.posicao;
+                            Posicao destino = new Posicao(i, j);
+                            Peca pecaCapturada = ExecutaMovimento(origem, destino);
+                            bool testeXeque = EstaEmXeque(cor);                            
+                            DesfazMovimento(origem, destino, pecaCapturada);
+                            if (!testeXeque)
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
         }
 
         public void ColocarNovaPeca(char coluna, int linha, Peca peca)
